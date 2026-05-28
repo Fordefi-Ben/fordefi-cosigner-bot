@@ -1,0 +1,106 @@
+{
+  "id": "b4375a2c-d54a-40e0-8612-c103fb9c808a",
+  "created_at": "2026-05-11T18:10:28.262000Z",
+  "modified_at": "2026-05-11T18:10:41.415000Z",
+  "managed_transaction_data": {
+    "created_by": {
+      "id": "6c48e6f9-fbf1-49a1-9907-c7444dde2cf1",
+      "user_type": "person",
+      "name": "Benjamen Totman",
+      "email": "bentotman@fordefi.com",
+      "state": "active",
+      "role": "admin"
+    },
+    "device_signing_request": {
+      "created_by": {
+        "id": "6c48e6f9-fbf1-49a1-9907-c7444dde2cf1",
+        "user_type": "person",
+        "name": "Benjamen Totman",
+        "email": "bentotman@fordefi.com",
+        "state": "active",
+        "role": "admin"
+      },
+      "signers": [
+        {
+          "user": {
+            "id": "6c48e6f9-fbf1-49a1-9907-c7444dde2cf1",
+            "user_type": "person",
+            "name": "Benjamen Totman",
+            "email": "bentotman@fordefi.com",
+            "state": "active",
+            "role": "admin"
+          },
+          "modified_at": "2026-05-11T18:10:28.328000Z",
+          "has_signed": false
+        }
+      ]
+    },
+    "policy_match": {
+      "is_default": true,
+      "rule_id": "00000000-0000-0000-0000-000000000000",
+      "rule_name": "",
+      "action_type": "allow"
+    },
+    "signer_type": "initiator",
+    "risks": [],
+    "vault": {
+      "id": "2c6eaf9c-52ae-4d5a-9b41-abe260f63cae",
+      "vault_group_id": "6fc57895-6b9f-4df1-9467-23e60e2507d4",
+      "vault_group_ids": ["6fc57895-6b9f-4df1-9467-23e60e2507d4"],
+      "name": "EVM Multisig 1",
+      "address": "0x5065561D4c265E4572868a3267F250f93fF8A0A3",
+      "state": "active",
+      "type": "evm"
+    },
+    "has_current_user_vault_permissions": true,
+    "sign_mode": "auto"
+  },
+  "signatures": [],
+  "spam_state": "unset",
+  "direction": "outgoing",
+  "signed_externally": false,
+  "interacted_vaults": [],
+  "organization_id": "27269a72-cc53-427b-85e5-5e93f93e6786",
+  "state": "waiting_for_approval",
+  "state_changes": [
+    {
+      "changed_at": "2026-05-11T18:10:28.262000Z",
+      "new_state": "waiting_for_approval"
+    }
+  ],
+  "type": "evm_message",
+  "evm_message_type": "personal_message_type",
+  "raw_data": "app.hyperunit.xyz wants you to sign in with your Ethereum account:\n0x5065561D4c265E4572868a3267F250f93fF8A0A3\n\nBy signing, you are proving you own this wallet and logging in. This does not initiate a transaction or cost any fees.\n\nURI: https://app.hyperunit.xyz\nVersion: 1\nChain ID: 1\nNonce: 39de94f6bc73572a7fd710c715065f0fe81520c2bc943ad3dd7b3baaec5b5ce0\nIssued At: 2026-05-11T18:10:25.141Z\nResources:\n- https://privy.io",
+  "vault": {
+    "id": "2c6eaf9c-52ae-4d5a-9b41-abe260f63cae",
+    "vault_group_id": "6fc57895-6b9f-4df1-9467-23e60e2507d4",
+    "vault_group_ids": ["6fc57895-6b9f-4df1-9467-23e60e2507d4"],
+    "name": "EVM Multisig 1",
+    "address": "0x5065561D4c265E4572868a3267F250f93fF8A0A3",
+    "state": "active",
+    "type": "evm"
+  },
+  "chain": {
+    "chain_type": "evm",
+    "named_chain_id": "ethereum_mainnet",
+    "chain_id": 1,
+    "unique_id": "evm_ethereum_mainnet",
+    "name": "Ethereum",
+    "native_currency_symbol": "ETH",
+    "native_currency_name": "Ether",
+    "is_testnet": false,
+    "is_enabled": true
+  },
+  "sender": {
+    "vault": {
+      "id": "2c6eaf9c-52ae-4d5a-9b41-abe260f63cae",
+      "vault_group_ids": ["6fc57895-6b9f-4df1-9467-23e60e2507d4"],
+      "name": "EVM Multisig 1",
+      "address": "0x5065561D4c265E4572868a3267F250f93fF8A0A3",
+      "state": "active",
+      "type": "evm"
+    },
+    "type": "evm",
+    "address": "0x5065561D4c265E4572868a3267F250f93fF8A0A3"
+  }
+}
