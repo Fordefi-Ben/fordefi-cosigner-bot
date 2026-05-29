@@ -83,10 +83,9 @@ registry.register(
     rule_id="<your-policy-rule-uuid>",
     validator=PersonalMessageValidator(
         matchers=[
-            SiweMatcher(domains={"app.myprotocol.xyz"}, chain_ids={1}),
-            RegexMatcher(r"^My App sign-in\.\n\nTimestamp: \d+\.$"),
+            RegexMatcher(r"^Access MyApp\.\n\nTimestamp: \d+\.$"),
+            ExactMatcher({"I agree to the terms of service"}),
         ],
-        match_non_siwe_raw=True,
     ),
 )
 ```
@@ -125,24 +124,12 @@ URL: `https://<your-id>.ngrok-free.app/webhook`
 ## PersonalMessageValidator
 
 Approves EIP-191 personal messages that match at least one configured matcher.
-Aborts if no matcher matches (fail-closed).
+Aborts if no matcher matches (fail-closed). Matchers are evaluated in order —
+the first match wins.
 
 ### Built-in matchers
 
-**`SiweMatcher`** — parses the message body as ERC-4361 SIWE and checks field
-constraints. All configured constraints must pass (AND logic).
-
-```python
-SiweMatcher(
-    domains={"app.example.com"},   # allowed signing domains
-    chain_ids={1},                  # allowed chain IDs (None = any)
-    statement_contains="I accept", # substring required in statement field
-    uri_pattern=r"^https://",       # regex applied to URI field
-)
-```
-
 **`RegexMatcher`** — applies a regular expression to the raw message string.
-Useful for non-SIWE application-specific formats.
 
 ```python
 RegexMatcher(r"^Access MyApp\.\n\nTimestamp: \d+\.$")
@@ -153,13 +140,6 @@ RegexMatcher(r"^Access MyApp\.\n\nTimestamp: \d+\.$")
 ```python
 ExactMatcher({"I agree to the terms of service"})
 ```
-
-### `match_non_siwe_raw`
-
-Controls behaviour for messages that don't parse as SIWE:
-- `False` (default) — abort immediately; only SIWE messages reach the matchers
-- `True` — `ExactMatcher` / `RegexMatcher` run on the raw text; `SiweMatcher`
-  always returns no-match for non-SIWE input
 
 ## How to add a validator
 
